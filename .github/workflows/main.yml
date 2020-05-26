@@ -16,8 +16,9 @@ jobs:
   build_hello_angular:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env:
-        working-directory: hello-angular
+    defaults:
+        run:
+            working-directory: hello-angular
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -36,8 +37,9 @@ jobs:
   
   build_hello_javalin:
     runs-on: ubuntu-latest
-    env:
-        working-directory: hello-angular
+    defaults:
+        run:
+            working-directory: hello-javalin
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
