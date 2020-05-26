@@ -18,7 +18,8 @@ import {CustomDate} from './custom-date.pipe';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+	CustomDate
   ],
   imports: [
     BrowserModule,
