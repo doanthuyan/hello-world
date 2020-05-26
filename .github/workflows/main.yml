@@ -36,15 +36,19 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.8
-    - name: Move to hello-angular
-      run: cd /home/runner/work/hello-world/hello-world/hello-angular
+
     - name: Install dependencies
       run: npm install
+      working-directory: hello-angular
     - name: Lint
       run: npm run lint
+      working-directory: hello-angular
     - name: Build
       run: npm run build -- --prod
+      working-directory: hello-angular
     - name: Test
       run: npm test -- --configuration=ci
+      working-directory: hello-angular
     - name: E2E
       run: npm run e2e -- --configuration=ci
+      working-directory: hello-angular
