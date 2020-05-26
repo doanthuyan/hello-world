@@ -35,8 +35,11 @@ jobs:
       run: npm run build -- --prod
   
   build_hello_javalin:
+    runs-on: ubuntu-latest
     env:
         working-directory: hello-angular
     steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
     - name: Build
       run: mvn clean install
