@@ -37,7 +37,7 @@ jobs:
       with:
         node-version: 12.8
     - name: Move to hello-angular
-      run: cd hello-angular
+      run: cd /home/runner/work/hello-world/hello-world/hello-angular
     - name: Install dependencies
       run: npm install
     - name: Lint
