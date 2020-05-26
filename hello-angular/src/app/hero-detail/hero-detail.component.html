@@ -1,0 +1,16 @@
+<button (click)="goBack()">go back</button>
+<h2>Selected Hero: {{myHero.name}}</h2>
+<div *ngIf="myHero">
+
+  <h2>{{myHero.name | uppercase}} Details</h2>
+  <div>
+  <!-- Convert original birthDate'dd/MM/yyyy' to Date then format to longer string -->
+  <h3>{{myHero.id}}. Born on: {{parseDate(myHero.birthDate) |date: 'EEE, dd MMM, yyyy'}}. ID num: {{myHero.id}} 
+  </h3></div>
+  <div>
+    <label>Hero name:
+      <input [(ngModel)]="myHero.name" placeholder="name"/>
+    </label>
+  </div>
+<button (click)="saveHero()">save</button>
+</div>
