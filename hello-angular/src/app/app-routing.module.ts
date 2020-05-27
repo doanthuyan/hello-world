@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
+import { CommonModule } from '@angular/common';
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
 	{ path: 'dashboard', component: DashboardComponent },
@@ -12,7 +13,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+	CommonModule,
+	RouterModule.forRoot(routes)
+	],
+	declarations: [],
+  	exports: [RouterModule]
 })
 export class AppRoutingModule { }
