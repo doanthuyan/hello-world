@@ -15,7 +15,7 @@ export class HeroesComponent implements OnInit {
 	birthDate: new Date(1990, 5,12)
   };
 */	  
-	selectedHero: Hero;
+	selectedHero: Hero;//  Hero={id:0,name:'',birthDate:''};
 	myHeroList : Hero[];
 	
 	constructor(private heroService: HeroService, private messageService: MessageService) { }
@@ -43,4 +43,6 @@ export class HeroesComponent implements OnInit {
 		this.myHeroList = this.myHeroList.filter(h => h !== hero);
 		this.heroService.deleteHero(hero).subscribe();
 	}
-}
+	
+  }
+

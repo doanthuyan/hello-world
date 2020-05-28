@@ -42,7 +42,12 @@ public class HeroHandler {
 
 	)
 	public void getHero(Context ctx) {
-		ctx.json(MockData.getInstance().getHero(validPathParamHeroId(ctx)));
+		Hero h = MockData.getInstance().getHero(validPathParamHeroId(ctx));
+		if (h== null) {
+			ctx.status(404);
+		}else {	
+			ctx.json(h);
+		}
 	}
 	private int validPathParamHeroId(Context ctx) {
         return ctx.pathParam("heroId", Integer.class).check(id -> id > 0).get();
@@ -111,7 +116,7 @@ public class HeroHandler {
 		Hero h = MockData.getInstance().getHero(validPathParamHeroId(ctx));
 		
 		if(h == null) {
-			ctx.status(400);
+			ctx.status(404);
 			return;
 		}
 		MockData.getInstance().deleteHero(h);

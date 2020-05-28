@@ -6,19 +6,37 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Hero } from '../hero';
 import { HeroService }  from '../hero.service';
+import { MessageService } from '../message.service';
+import { HttpClientModule } from '@angular/common/http';
+import {  of } from 'rxjs';
+class FakeApiService {
+	mockHeroList = [
+	     {id: 1, name: 'SpiderDude', birthDate: '12/1/1998'},
+	     {id: 2, name: 'Wonderful Woman', birthDate: '12/11/1990'},
+	     {id: 3, name: 'SuperDude', birthDate: '1/1/1948'}
+	   ];
+  // Implement the methods you want to overload here
+  getHeroes() {
+    return of(this.mockHeroList ); // * mocks the return of the real method
+  }
+	getHero(id:number){return of(this.mockHeroList[0] );}
+	updateHero(h:Hero){}
+	deleteHero(h:Hero){}
+	searchHeroes(){return of(this.mockHeroList[0] );}
+}
 describe('HeroDetailComponent', () => {
   let component: HeroDetailComponent;
   let fixture: ComponentFixture<HeroDetailComponent>;
-  let service: HeroService;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeroDetailComponent ],
       imports: [
+        FormsModule,
         RouterTestingModule,
-		FormsModule,
-		HttpClientTestingModule,
+        HttpClientModule
       ],
-	providers: [{provide: HeroService, useClass: HeroService}]
+	providers: [{ provide: HeroService, useClass: FakeApiService }, MessageService]
     })
     .compileComponents();
   }));
@@ -27,7 +45,7 @@ describe('HeroDetailComponent', () => {
     fixture = TestBed.createComponent(HeroDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-	service = TestBed.get(HeroService);
+	
   });
 
   it('should create', inject([HeroService], (service: HeroService) => {

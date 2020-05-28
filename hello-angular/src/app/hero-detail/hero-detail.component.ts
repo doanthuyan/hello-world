@@ -49,4 +49,5 @@ export class HeroDetailComponent implements OnInit {
 	    const timestamp = typeof value === 'number' ? value : Date.parse(value);
 	    return isNaN(timestamp) ? null : new Date(timestamp);
   }
+
 }
