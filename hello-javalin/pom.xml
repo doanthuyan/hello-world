@@ -61,10 +61,20 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+
+					</execution>
+				</executions>
+
 				<configuration>
-					<mainClass>HeroAPI</mainClass>
+					<mainClass>api.HeroAPI</mainClass>
 
 				</configuration>
+
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -79,7 +89,7 @@
 							<archive>
 								<manifest>
 									<mainClass>
-										HeroAPI
+										api.HeroAPI
 									</mainClass>
 								</manifest>
 							</archive>
@@ -87,7 +97,7 @@
 								<descriptorRef>jar-with-dependencies</descriptorRef>
 							</descriptorRefs>
 							<finalName>mock-hero-api</finalName>
-  							<appendAssemblyId>false</appendAssemblyId>
+							<appendAssemblyId>false</appendAssemblyId>
 						</configuration>
 					</execution>
 				</executions>

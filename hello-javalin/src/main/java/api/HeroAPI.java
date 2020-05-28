@@ -1,3 +1,4 @@
+package api;
 
 import controller.HeroHandler;
 import io.javalin.Javalin;
@@ -9,7 +10,7 @@ import io.swagger.v3.oas.models.info.Info;
 
 public class HeroAPI {
 	public static void main(String[] args) {
-		HeroHandler heroController = new HeroHandler();
+		HeroHandler  heroController = new HeroHandler();
         Javalin app = Javalin.create(
         	config ->{
         		config.addStaticFiles("public");
