@@ -1,0 +1,57 @@
+id,link,age,gender,nature,location,hospital,dateIn,dateOut,status
+672,469,37,M,"Dai Hiep, Dai Loc, Quang Nam",Da Nang,Quang Nam,05-08-2020,,Treating
+671,524,38,M,"Duy Son, Duy Xuyen, Quang Nam",Da Nang,Quang nam,05-08-2020,,Treating
+670,,50,M,"Thanh Truc Thach Thanh, Thanh Hoa",Guinea,Nhiet doi TW,04-08-2020,,Treating
+669,510,50,M,"Quang Vnh, Bien Hoa, Dong Nai",Da Nang,Phoi Dong Nai,04-08-2020,,Treating
+652,555,,,,,,,,treating
+651,,67,F,"uy Xuyên, Qu?ng Nam",,,,06-08-2020,Passed
+646,555,,,,,,,,treating
+621,,60,F,"Binh Son, Quang Ngai",Da Nang,Da Nang,01-08-2020,,treating
+620,,44,F,"Ph? Lý, Hà Na",Da Nang,,02-08-2020,,treating
+603,,21,M,"Bình Th?nh, TP. H? Chí Minh",My,Nhi?t ??i Khánh Hòa,02-08-2020,,treating
+602,,14,M,"Tân Phú, TP. H? Chí Minh","Buôn Ma Thu?t, ??k L?k",,02-08-2020,,treating
+601,,42,F,"Tân Phú, TP. H? Chí Minh","Buôn Ma Thu?t, ??k L?k",,02-08-2020,,treating
+600,522,7,F,"Th?ng Bình, Qu?ng Nam",Da Nang,,02-08-2020,,treating
+599,522,9,F,"Th?ng Bình, Qu?ng Nam",Da Nang,,02-08-2020,,treating
+598,522,8,F,"Th?ng Bình, Qu?ng Nam",Da Nang,,02-08-2020,,treating
+597,522,39,M,"Th?ng Bình, Qu?ng Nam",Da Nang,,02-08-2020,,treating
+596,,23,F,"Th?ng Bình, Qu?ng Nam",Da Nang,,02-08-2020,,treating
+595,510,40,F,Bien Hoa,Da Nang,Phoi Dong Nai,01-08-2020,,Treating
+595,510,50,F," Biên Hòa, ??ng Nai",Da Nang,,02-08-2020,,treating
+594,510,68,F,"H?i An, Qu?ng Nam",Da Nang,,02-08-2020,,treating
+593,,75,M,,Da Nang,,02-08-2020,,treating
+592,524,100,F,"Duy Xuyên, Qu?ng Nam",Da Nang,,02-08-2020,,treating
+591,456,63,F,"Duy Xuyên, Qu?ng Nam",Da Nang,,02-08-2020,,treating
+590,517,40,M,Quang Ngai,Da Nang,"Bình S?n - Dung Qu?t, Qu?ng Ngãi",02-08-2020,,treating
+589,517,42,M,HCM,Da Nang,Nhi?t ??i TP.HCM,02-08-2020,,treating
+588,,,,,Nga,Hoa Binh,02-08-2020,,treating
+587,,,,,Nga,Hoa Binh,02-08-2020,,treating
+568,,,,HCM,Da Nang,Nhi?t ??i TP.HCM,01-08-2020,,treating
+567,,,,HCM,Da Nang,Nhi?t ??i TP.HCM,01-08-2020,,treating
+566,522,,,Thái Bình,Da Nang,,01-08-2020,,treating
+560,,,,,Indonesia ,Lao ph?i Trà Vinh,01-08-2020,,treating
+559,,,,,Indonesia ,Lao ph?i Trà Vinh,01-08-2020,,treating
+558,,72,f,,Da Nang,,01-08-2020,,treating
+557,509,2,m,,Da Nang,,01-08-2020,,treating
+556,,29,m,Hòa Ph??c - Hòa Vang - ?à N?ng,Da Nang,,01-08-2020,,treating
+555,,33,m,,Da Nang,,01-08-2020,,treating
+554,416,37,m,,Da Nang,,01-08-2020,,treating
+553,,25,m,,Da Nang,,01-08-2020,,treating
+552,,78,m,,Da Nang,,01-08-2020,,treating
+551,461,35,F,,Da Nang,,01-08-2020,,treating
+550,461,75,F,,Da Nang,,01-08-2020,,treating
+549,461,55,F,,Da Nang,,01-08-2020,,treating
+548,,37,M,,Da Nang,,01-08-2020,,treating
+547,,52,M,Quang nam,Da Nang,,01-08-2020,,treating
+524,,86,F,Quang nam,Da Nang,,,02-08-2020,Passed
+496,,65,M,"Hoa Vang, Da nang",Da Nang,Da Nang,28-07-2020,04-08-2020,Passed
+475,,83,F,Da Nang,Da Nang,,,02-08-2020,Passed
+464,428,69,f,"Minh An, TP. H?i An, t?nh Qu?ng Nam",Da Nang,,30-07-2020,,treating
+463,428,45,f,"Cam Nam, TP. H?i An, t?nh Qu?ng Nam",Da Nang,,30-07-2020,,treating
+462,428,53,m,"Minh An, TP. H?i An, t?nh Qu?ng Nam",Da Nang,,30-07-2020,,treating
+461,,45,f,,Da Nang,,26-07-2020,,treating
+460,,49,f,Quang nam,Da Nang,,23-07-2020,,treating
+429,,53,F,,,,,,Passed
+426,,62,F,"Hoa Vang, Da nang",Da Nang,Da Nang,26-07-2020,04-08-2020,Passed
+718,,67,F,"C?m L?, ?à N?ng",Da Nang,Da Nang,03-08-2020,06-08-2020,Passed
+428,,70,M,Da Nang,Da Nang,Da Nang,27-07-2020,,treating

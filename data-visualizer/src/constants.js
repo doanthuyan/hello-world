@@ -1,0 +1,9 @@
+const unknown_gender = ' &#128100;';
+const f_icon = ' &female;';
+const m_icon = ' &male;';
+const b_icon  = ' &#;';
+const g_icon = ' &#;';
+const ma_icon = ' &#;';
+const pa_icon = ' &#;';
+const ok_icon = ' &#9989;';
+const nok_icon = ' &#10060;';
