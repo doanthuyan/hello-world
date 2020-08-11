@@ -8,7 +8,7 @@ on:
   push:
     branches: [ master ]
     paths-ignore: # Don't trigger on files that are updated by the CI
-      - 'README.md
+      - 'README.md'
       - 'hello-javalin/README.md'
       - 'hello-angular/README.md'
 
