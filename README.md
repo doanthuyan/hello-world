@@ -1,5 +1,7 @@
 # hello-world
-![](https://github.com/doanthuyan/hello-world/workflows/CI/badge.svg) [![Known Vulnerabilities](https://snyk.io/test/github/doanthuyan/hello-world/badge.svg)](https://snyk.io/test/github/doanthuyan/hello-world)
+![](https://github.com/doanthuyan/hello-world/workflows/CI/badge.svg) 
+
+![](https://snyk.io/test/github/doanthuyan/hello-world/badge.svg?targetFile=hello-javalin/pom.xml)
 
 
 ## Usage
