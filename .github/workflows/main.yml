@@ -27,6 +27,10 @@ jobs:
         java-version: 8
     - name: Build with Maven
       run: mvn clean install
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/maven-3-jdk-11@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   build_hello_angular:
     needs: build_hello_javalin
     name: Angular CI
