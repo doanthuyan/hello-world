@@ -27,13 +27,7 @@ jobs:
         java-version: 11
     - name: Build with Maven
       run: mvn clean install
-    - name: Run Snyk to check for vulnerabilities
-      uses: snyk/actions/maven@master
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      with:
-        command: test
-        args: --file=hello-world/hello-javalin/pom.xml 
+    
   build_hello_angular:
     needs: build_hello_javalin
     name: Angular CI
@@ -62,11 +56,4 @@ jobs:
       run: npm run test-headless
       env:
         CI: true
-    #- name: Run Snyk to check for vulnerabilities
-    #  uses: snyk/actions/node@master
-    #  continue-on-error: true
-    #  env:
-    #    SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-    #  with:
-    #    command: monitor
-    #    args: --file=hello-angular/package.json  
+    
