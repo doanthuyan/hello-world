@@ -8,7 +8,9 @@ on:
   push:
     branches: [ master ]
     paths-ignore: # Don't trigger on files that are updated by the CI
-      - README.md
+      - 'README.md
+      - 'hello-javalin/README.md'
+      - 'hello-angular/README.md'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
