@@ -16,9 +16,12 @@ public class DataProcessor {
 		if(args.length > 0) {
 			input = args[0];
 		}
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader(input));
-			PrintWriter writer = new PrintWriter(output);
+		//try-with-resources
+		//reader & writer are automatically closed regardless of whether the try statement completes normally or abruptly
+		try (BufferedReader reader = new BufferedReader(new FileReader(input));
+				PrintWriter writer = new PrintWriter(output);
+				){
+			
 			String line = reader.readLine();
 			int count = 0;
 			while(line != null) {
@@ -35,10 +38,9 @@ public class DataProcessor {
 			if(count > 0) {
 				writer.print("';\n");
 			}
-			reader.close();
-			writer.close();
+			
 		}catch(Exception e) {
-			e.printStackTrace();
+			e.getSuppressed();
 		}
 	}
 
