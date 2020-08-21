@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<style>
+.tableFixHead th { position: sticky; top: 0; }
+table  { border-collapse: collapse; width: 100%; border: 1px solid black;}
+th, td { padding: 8px 16px; border: 1px solid black;}
+th     { background:#FCF3CF ; }
+.operating td{ background:#FCF3CF  ;}
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+ 
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  
+</style>
+<script type="text/javascript" language="javascript">
+window.addEventListener('load', (event) => {
+    getUSList();
+});
+function getUSList()
+{
+    
+	URL = "https://crowdsniffing.org/api/sniffers";
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange  = function(){
+		
+		if (this.readyState == 4) {
+			parseSniffer(this.responseText) ;
+			
+		}
+	};
+    xmlhttp.open("GET", URL, false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+	//xmlhttp.setRequestHeader("PRIVATE-TOKEN", sessionStorage.getItem("privateToken"));
+
+    xmlhttp.send();
+	
+      
+}
+function parseSniffer(textData) 
+{
+	var myObj = JSON.parse(textData);
+	//after indexing, we can sort
+	myObj.data.sort(function(a, b) {	if (a.status ==  "OPERATING" ) return -1;
+								else if (b.status ==  "OPERATING"  ) return 1;
+								else return 0;
+								});
+	var table = document.createElement('table');
+	table.className= 'tableFixHead';
+	addHeaders(table);
+	for(let n in myObj.data){
+		console.log(myObj.data[n]);
+		var row = table.insertRow();
+		var cId = row.insertCell();
+		cId.innerHTML = myObj.data[n].id;
+		var cCode= row.insertCell();
+		cCode.innerHTML = myObj.data[n].code;
+		var cGPS= row.insertCell();
+		cGPS.innerHTML = 'long: ' + myObj.data[n].gpsLocation.longitude +'<br>lat: '+ myObj.data[n].gpsLocation.latitude;
+		var cName= row.insertCell();
+		cName.innerHTML = myObj.data[n].name;
+		var cStatus= row.insertCell();
+		cStatus.innerHTML = myObj.data[n].status;
+		if (myObj.data[n].status == "OPERATING" ) cStatus.style = 'background:#ccffb3  ;';
+		var cMac= row.insertCell();
+		cMac.innerHTML = myObj.data[n].macAddress;
+		var cAddress= row.insertCell();
+		cAddress.innerHTML = myObj.data[n].address.address;
+	}
+	document.getElementById('demo').appendChild(table);
+	document.getElementById('loader').style.display = 'none';
+}
+function addHeaders(table) {
+	var headerTexts = ['ID','Code','GPS','Name','Status','MAC','Address'];
+	var header = document.createElement("thead");
+	var hRow = document.createElement("tr");
+  
+  
+  for( var i = 0; i < headerTexts.length; i++ ) {
+    var cell = document.createElement("th");
+	cell.innerHTML =  headerTexts[i];
+    //cell.appendChild(document.createTextNode(headTxt[i]));
+	hRow.appendChild(cell);
+  }
+  header.appendChild(hRow);
+  table.appendChild(header);
+}
+
+</script>
+</head>
+<body id='bod'>
+<h2>Server https://crowdsniffing.org </h2>
+<div class="loader" id='loader'></div>
+<h3>Sniffer data today</h3>
+<div id="demo"></div>
+
+</body>
+</html>

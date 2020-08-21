@@ -1,7 +1,5 @@
 /* HeroDetailComponent's private CSS styles */
-h2{
-	
-}
+
 h3{
 	color: #607D8B;
 }
@@ -19,7 +17,7 @@ input {
 }
 button {
   margin-top: 20px;
-  font-family: Arial;
+  font-family: Arial ,sans-serif;
   background-color: #eee;
   border: none;
   padding: 5px 10px;
