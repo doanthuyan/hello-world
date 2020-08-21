@@ -15,14 +15,26 @@
 <div id="map"></div>
 
 <script>
-	if(sessionStorage.getItem("geoData") == "" || sessionStorage.getItem("geoData") == null){
-		console.log("no geodata");
+	if(sessionStorage.getItem("snifferData") == "" || sessionStorage.getItem("snifferData") == null){
+		console.log("no snifferData");
 		window.location.href = 'snifferIndex.html';
 	}
 	mapboxgl.accessToken = 'pk.eyJ1IjoiZG9hbnRodXlhbiIsImEiOiJjanVubDY3ZTIwbm03NGRsdDE0dmwwODhsIn0.LDyiO9vhFmgWdExZlIh92Q';
 	console.log("testMapBox");
-	var geoData = JSON.parse(sessionStorage.getItem("geoData"));
-	console.log(geoData);
+	var myObj = JSON.parse(sessionStorage.getItem("snifferData"));
+	var geoData ={ 'type': 'FeatureCollection', 'features':[]};
+	for(let n in myObj.data){
+		if (myObj.data[n].status == "OPERATING" ) {
+			var geoSniffer = {'type':'Feature',
+				'geometry':{'type':'Point','coordinates':[myObj.data[n].gpsLocation.longitude,myObj.data[n].gpsLocation.latitude]}
+		          ,'properties': {'name':myObj.data[n].name
+								,'id':myObj.data[n].id
+								,'code':myObj.data[n].code
+								,'status':myObj.data[n].status}};
+								
+			geoData.features.push(geoSniffer);
+		}
+	}
 	var map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/light-v10',
