@@ -7,7 +7,7 @@ import { createClient, Entry } from 'contentful';
 // SET YOU OWN CONFIG here
 const CONFIG = {
   space: 'f390snu6msjy',
-  accessToken: '7CYehMi19a-rp-6KnGSbD1LIikZNbTX9ZJ-MXzMM3Mk',
+  accessToken: '',
 
   contentTypeIds: {
     hero: 'hero'
