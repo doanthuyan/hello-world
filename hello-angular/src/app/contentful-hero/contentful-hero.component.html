@@ -1,0 +1,10 @@
+<p>contentful-hero works!</p>
+<!-- ./app/product-list/product-list.component.html-->
+<ul class="u-listReset">
+  <li *ngFor="let product of contentfulHeros">
+    {{ product.fields.name }}
+    <img [src] = " product.fields.avatar.fields.file.url  "/>
+    <div [innerHtml]="_returnHtmlFromRichText(product.fields.bio)">
+    </div>
+  </li>
+</ul>
